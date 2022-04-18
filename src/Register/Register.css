@@ -1,0 +1,31 @@
+
+.central-frame {
+    background-color: #332E2E;
+    height: 550px;
+    width: 800px;
+    position: absolute;
+    top: 15%;
+    left: 610px;
+    border-color: #1B1A1A;
+    border-radius: 10px;
+}   
+
+.field-label {
+    color: white;
+}
+
+.head-line {
+    color: white;
+    position: relative;
+    left: 25%;
+    font-size: 250%;
+}
+
+.log-in-text {
+    color: #B7B3B3;
+
+}
+
+.validation-label {
+    color: red;
+}
