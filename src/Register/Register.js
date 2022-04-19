@@ -1,7 +1,8 @@
 import './Register.css';
 import React, {useState} from 'react';
-import userList from '../UserList.js';
-import Validate from './Validate/Validate';
+import users from '../Users.js';
+import Login from '../Login/Login'
+import ReactDOM from 'react-dom';
 
 
 function Register(props) {
@@ -34,15 +35,19 @@ function Register(props) {
         else {
             document.getElementById("ValidatePassword").innerHTML = '';
         }
-        if (password != confirmPassword) {
+        if (password !== confirmPassword) {
             document.getElementById("ValidateConfirmPassword").innerHTML = 'Passwords do not match';
             isValid = false;
         }
         else {
             document.getElementById("ValidateConfirmPassword").innerHTML = '';
         }
-        if (isValid == true) {
-            console.log("true");
+        if (isValid === true) {
+            console.log("false");
+            <Login />
+        }
+        else {
+            
         }
     }
 
