@@ -2,13 +2,14 @@ import RenderMessage from "../Message/Message";
 import msgList from "../Messages";
 
 function MainChat(userName) {
-    var messages = msgList.filter(function (message) {
-        return message.username === userName;
-    })
+    var personalMsg = msgList.filter()
+    var messages = msgList.map((msg) => {
+        return RenderMessage(msg.text);
+    });
     return (
         <div className="central-frame">
-            <div className="left-menu">
-                   {console.log(messages)}
+            <div className="col-1 col-lg-3 g-0 left-menu">
+                {messages}
             </div>
         </div>
     );
