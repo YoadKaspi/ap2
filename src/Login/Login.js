@@ -20,7 +20,7 @@ function Login() {
         if (!flag) {
             document.getElementById("unregistered").innerHTML = "username or password are incorrect";
         } else {
-            navigate("/register");
+            navigate("/mainchat", {userName});
         }
     };
 
@@ -33,7 +33,7 @@ function Login() {
         <form name="LoginForm">
             <div className="field-name d-grid gap-0.8 central-frame">
                 <div>
-                    <label htmlFor="exampleFormControlInput1" className="form-label head-line">
+                    <label htmlFor="exampleFormControlInput1" className="form-label headline">
                         Welcome To Brawlhalla
                     </label>
                     <br />

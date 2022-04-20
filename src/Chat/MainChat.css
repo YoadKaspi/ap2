@@ -1,0 +1,16 @@
+.central-frame {
+    background-color: #332E2E;
+    height: 550px;
+    width: 800px;
+    position: absolute;
+    top: 15%;
+    left: 610px;
+    border-color: #1B1A1A;
+    border-radius: 10px;
+}
+
+.left-menu {
+    background-color: white;
+    height: 100%;
+    width: 30%;
+}

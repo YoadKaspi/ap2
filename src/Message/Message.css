@@ -1,0 +1,15 @@
+.message {
+    border-color: black;
+    border-radius: 5px;
+    width: min-content;
+    height: min-content;
+    padding: 5px;
+}
+
+.my_message {
+    background-color: lightgreen;
+}
+
+.other_message {
+    background-color: white;
+}

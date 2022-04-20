@@ -13,7 +13,6 @@ function Register(props) {
 
     const handleSubmit = () => {
         let isValid = true;
-        let flag = false;
         if (userName.length < 2) {
             document.getElementById("ValidateUsername").innerHTML = "Username too short(needs to be 2 or more letters)";
             isValid = false;
@@ -40,20 +39,8 @@ function Register(props) {
             document.getElementById("ValidateConfirmPassword").innerHTML = "";
         }
         if (isValid === true) {
-            document.getElementById("registered").innerHTML = "";
-            for (var i in users) {
-                if (users[i].username === userName) {
-                    flag = true;
-                    break;
-                }
-            }
-        }
-        console.log(flag);
-        if (flag) {
-            document.getElementById("registered").innerHTML = "Username already exists, please pick a different one";
-        } else {
-            console.log("im here");
-            navigate("/register");
+            users.push({username: userName, displayname: displayName, password: password}); // בסדר בכל מקרה שיהיה
+            navigate("/login");
         }
     };
 
@@ -180,19 +167,10 @@ function Register(props) {
                         onChange={(e) => setConfirmPassword(e.target.value)}
                     ></input>
                 </div>
-                <div className="row">
-                    <div className="col-sm-4">
-                        <button type="button" className="btn btn-link btn-sm" onClick={() => navigate("/login")}>
-                            Already registered? log in here
-                        </button>
-                    </div>
-                    <div className="col-sm-7">
-                        <label
-                            htmlFor="exampleFormControlInput1"
-                            id="registered"
-                            className="form-label validation-label"
-                        ></label>
-                    </div>
+                <div className="col-sm-4">
+                    <button type="button" className="btn btn-link btn-sm" onClick={() => navigate("/login")}>
+                        Already registered? log in here
+                    </button>
                 </div>
                 <div className="d-grid gap-3 col-6 mx-auto">
                     <button className="btn btn-outline-success" type="button" onClick={() => handleSubmit()}>
