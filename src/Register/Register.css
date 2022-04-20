@@ -1,29 +1,27 @@
-
 .central-frame {
-    background-color: #332E2E;
-    height: 550px;
+    background-color: #332e2e;
+    height: 600px;
     width: 800px;
     position: absolute;
     top: 15%;
     left: 610px;
-    border-color: #1B1A1A;
+    border-color: #1b1a1a;
     border-radius: 10px;
-}   
+}
 
 .field-label {
     color: white;
 }
 
-.head-line {
+.headline {
     color: white;
     position: relative;
-    left: 25%;
-    font-size: 250%;
+    left: 32%;
+    font-size: 170%;
 }
 
 .log-in-text {
-    color: #B7B3B3;
-
+    color: #b7b3b3;
 }
 
 .validation-label {
