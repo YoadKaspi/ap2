@@ -13,7 +13,7 @@ ReactDOM.render(
                 <Route path="/" element={<Navigate to="/login" />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/mainchat" element={<MainChat />} />
+                <Route path="/mainchat/:userName" element={<MainChat />} />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>,

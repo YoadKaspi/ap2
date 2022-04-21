@@ -1,5 +1,4 @@
 import "./Message.css";
-import userName from "../Login/Login";
 
 function Message({ sender, reciever, text }) {
     console.log(text + ", RenderMessage");

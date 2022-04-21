@@ -10,5 +10,8 @@
 }
 
 .left-menu {
-    color: white;
+    background-color: white;
+    width: 500px;
+    height: 100px;
+    float: left
 }
