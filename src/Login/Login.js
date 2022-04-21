@@ -20,7 +20,7 @@ function Login() {
         if (!flag) {
             document.getElementById("unregistered").innerHTML = "username or password are incorrect";
         } else {
-            navigate("/mainchat", {userName});
+            navigate("/mainchat", { userName });
         }
     };
 
@@ -97,3 +97,4 @@ function Login() {
 }
 
 export default Login;
+userName;
