@@ -1,9 +1,14 @@
 import "./Message.css";
+import { useParams } from "react-router-dom";
 
 function Message({ sender, reciever, text }) {
-    console.log(text + ", RenderMessage");
+    const { userName } = useParams();
 
-    return <div className="message my_message">{text}</div>;
+    if (sender === userName) {
+        return <div className="message my_message">{text}</div>;
+    } else {
+        return <div className="message other_message">{text}</div>;
+    }
 }
 
 export default Message;

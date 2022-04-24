@@ -1,9 +1,14 @@
+:root {
+    --min-content: var(--min-content);
+}
+
 .message {
     border-color: black;
     border-radius: 5px;
     width: min-content;
     height: min-content;
     padding: 5px;
+    font-size: 30px;
 }
 
 .my_message {
@@ -12,4 +17,6 @@
 
 .other_message {
     background-color: white;
+    position: absolute;
+    left: 1265px;
 }

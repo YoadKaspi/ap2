@@ -1,22 +1,5 @@
-.central-frame {
-  background-color: #332e2e;
-  height: 550px;
-  width: 800px;
-  position: absolute;
-  top: 15%;
-  left: 610px;
-  border-color: #1b1a1a;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: row;
-}
-
-.left-menu {
-  background-color: white;
-  width: 500px;
-  height: 100px;
-  float: left;
-}
-
-.chat {
+.chat-frame {
+    background-color: #332e2e;
+    height: 100vh;
+    width: 800px;
 }
