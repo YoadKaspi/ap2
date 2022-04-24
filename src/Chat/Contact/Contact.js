@@ -1,19 +1,20 @@
 import "./Contact.css";
 
-function RenderContact(
-  { username, displayname, password, imgPath },
-  contactState
-) {
+function RenderContact({
+  username,
+  displayname,
+  password,
+  imgPath,
+  contactState,
+}) {
   return (
-    <div
-      className="contact-field"
-      onClick={() => {
-        contactState({ username });
-      }}
-    >
+    <div className="contact-field">
       <button
         className="list-group-item list-group-item-action"
         aria-current="true"
+        onClick={() => {
+          contactState(username);
+        }}
       >
         <div className="d-flex">
           <div className="flex-shrink-0">

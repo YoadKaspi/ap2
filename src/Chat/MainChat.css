@@ -8,3 +8,13 @@
   background-color: white;
   width: 500px;
 }
+
+.chat-screen {
+  width: 75% !important;
+}
+
+.text-box {
+  position: absolute;
+  border-radius: 5px;
+  bottom: 0px;
+}
