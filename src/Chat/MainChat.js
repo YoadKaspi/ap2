@@ -1,59 +1,78 @@
-import Message from "./Message/Message";
 import msgList from "./Message/msgList";
 import userList from "../Users";
-import RenderContact from "./Contact/Contact";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import "./MainChat.css";
+import RenderChat from "./RenderChat/RanderChat";
+import RenderContactMenu from "./RenderContactMenu/RenderContactMenu";
 
 function MainChat() {
-    function renderNewMessage() {
-        var newMsg = { sender: userName, reciever: contactName, text: currMsg };
-        msgList.push(newMsg);
-        return { renderedMessages };
-    }
+  const { userName } = useParams();
+  const [contactName, setContactName] = useState("");
+  const [messageList, setMessageList] = useState(msgList);
 
-    const { userName } = useParams();
-    const [contactName, setContactName] = useState("");
-    const [currMsg, setCurrMsg] = useState("");
-
-    var renderedMessages = msgList.map((message, key) => {
-        if (
-            (message.sender === userName && message.reciever === contactName) ||
-            (message.reciever === userName && message.sender === contactName)
-        ) {
-            return <Message {...message} key={key} />;
-        }
-    });
-
-    var contacts = userList.map((user, key) => {
-        if (user.username !== userName) {
-            return <RenderContact {...user} key={key} contactState={setContactName} />;
-        }
-    });
-
-    return (
-        <div className="d-flex justify-content-start">
-            <div>
-                <div className="contact-headline"> contact list </div>
-                <div className="list-group"> {contacts} </div>
-            </div>
-            <div className="chat-frame">
-                <div> {renderedMessages} </div>
-                <div className="textbox-block d-flex align-items-center">
-                    <div className=""></div>
-                    <div className="">
-                        <input className="form-control" value={currMsg}></input>
-                    </div>
-                    <div className="">
-                        <button className="btn btn-outline-dark" onClick={renderNewMessage()}>
-                            send
-                        </button>
-                    </div>
-                </div>
-            </div>
+  return (
+    <div className="d-flex justify-content-start">
+      <div>
+        <div className="contact-headline"> contact list </div>
+        <div className="list-group">
+          {" "}
+          <RenderContactMenu
+            contacts={userList}
+            userName={userName}
+            setContactName={setContactName}
+          />{" "}
         </div>
-    );
+      </div>
+      <div className="chat-frame">
+        <div>
+          {" "}
+          <RenderChat
+            messages={messageList}
+            userName={userName}
+            contactName={contactName}
+          />{" "}
+        </div>
+        <div className="textbox-block d-flex align-items-center">
+          <div className="input-group mb-3">
+            <span className="input-group-text" id="inputGroup-sizing-default">
+              Default
+            </span>
+            <input
+              type="text"
+              id="msgArea"
+              className="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+            />
+            <button
+              className="btn btn-light send-button"
+              onClick={() => {
+                const txt = document.getElementById("msgArea").value;
+                setMessageList((messageList) => [
+                  ...messageList,
+                  { sender: userName, reciever: contactName, text: txt },
+                ]);
+                document.getElementById("msgArea").value = "";
+              }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                fill="currentColor"
+                className="bi bi-forward-fill"
+                viewBox="0 0 16 16"
+              >
+                <path d="m9.77 12.11 4.012-2.953a.647.647 0 0 0 0-1.114L9.771 5.09a.644.644 0 0 0-.971.557V6.65H2v3.9h6.8v1.003c0 .505.545.808.97.557z" />
+              </svg>
+            </button>
+          </div>
+          <div className=""></div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default MainChat;
