@@ -3,11 +3,18 @@ import { useParams } from "react-router-dom";
 
 function Message({ sender, reciever, text }) {
     const { userName } = useParams();
+    const { displayName } = useParams();
 
-    if (sender === userName) {
-        return <div className="message my_message">{text}</div>;
-    } else {
-        return <div className="message other_message">{text}</div>;
+    if (text === "" || reciever === "") {
+        return;
+    } else if (sender === userName) {
+        return (
+            <div className="flex-row message my_message">
+                {text} {displayName}
+            </div>
+        );
+    } else if (reciever === userName) {
+        return <div className="flex-row-reverse message other_message">{text}</div>;
     }
 }
 

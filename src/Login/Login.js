@@ -1,4 +1,4 @@
-import users from "../Users.js";
+import userList from "../Users.js";
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -11,8 +11,8 @@ function Login() {
 
     const handleLogin = () => {
         var flag = false;
-        for (var i in users) {
-            if (users[i].username === userName && users[i].password === password) {
+        for (var i in userList) {
+            if (userList[i].username === userName && userList[i].password === password) {
                 flag = true;
                 break;
             }
