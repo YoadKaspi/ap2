@@ -1,6 +1,8 @@
-function findUser({ userName, userList }) {
-  const user = userList.find((object) => object.username === userName);
-  return user;
+import userList from "../../Users";
+
+function findUser({ userName }) {
+    var user = userList.find((object) => object.username === userName);
+    return user;
 }
 
 export default findUser;
