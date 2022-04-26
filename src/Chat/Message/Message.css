@@ -1,16 +1,23 @@
 .message {
-    border-color: black;
-    border-radius: 5px;
-    width: min-content;
-    height: min-content;
-    padding: 5px;
-    font-size: 30px;
+  border-color: black;
+  border-radius: 5px;
+  color: white;
+  width: 800px;
+  height: min-content;
+  padding: 5px;
+  font-size: 25px;
 }
 
-.my_message {
-    background-color: lightgreen;
+.displayName {
+  font-size: 25px;
 }
 
-.other_message {
-    background-color: white;
+.text {
+  font-size: 20px;
+}
+
+.image {
+  height: 70px;
+  width: 70px;
+  border-radius: 50px;
 }

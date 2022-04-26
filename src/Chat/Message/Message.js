@@ -1,21 +1,32 @@
 import "./Message.css";
-import { useParams } from "react-router-dom";
+import findUser from "../findUser/findUser";
+import userList from "../../Users";
 
 function Message({ sender, reciever, text }) {
-  const { userName } = useParams();
-  const { displayName } = useParams();
+  const user = findUser({ userName: sender, userList });
 
-  if (text === "" || reciever === "") {
-    return;
-  } else if (sender === userName) {
-    return (
-      <div className="flex-row message my_message">
-        {text} {displayName}
+  console.log(user.imgPath);
+
+  return (
+    <div className="message">
+      <div className="d-flex">
+        <div className="flex-shrink-0">
+          <img
+            src={require("../Contact/img/" + user.imgPath)}
+            className="image"
+          />
+        </div>
+        <div className="flex-grow-1 container">
+          <div className="row justify-content-between">
+            <h3 className="col-8 displayName">{user.displayname}</h3>
+          </div>
+          <div className="row">
+            <p className="mb-1 flex-grow-1 ms-3 text">{text}</p>
+          </div>
+        </div>
       </div>
-    );
-  } else if (reciever === userName) {
-    return <div className="flex-row-reverse message other_message">{text}</div>;
-  }
+    </div>
+  );
 }
 
 export default Message;
