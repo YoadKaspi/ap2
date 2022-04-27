@@ -1,5 +1,3 @@
-// import msgList from "../Message/msgList";
-
 function findLastMessage({ userName, contactName, messageList }) {
   var last = "";
   for (var m in messageList) {

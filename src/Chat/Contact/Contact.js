@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import findLastMessage from "../findUser/findLastMessage";
 import findUser from "../findUser/findUser";
 import userList from "../../Users";
-import msgList from "../Message/msgList";
 import "./Contact.css";
 
 function RenderContact({
