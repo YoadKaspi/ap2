@@ -168,7 +168,6 @@ function MainChat() {
                                 const txt = document.getElementById("msgArea").value;
                                 var date = new Date();
                                 console.log(date.getDay());
-                                console.log(date.getM);
                                 setMessageList((messageList) => [
                                     ...messageList,
                                     { sender: userName, reciever: contactName, text: txt },
