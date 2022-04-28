@@ -21,3 +21,9 @@
   width: 70px;
   border-radius: 50px;
 }
+
+.big_image {
+  object-fit: cover;
+  width: 70%;
+  height: 300px;
+}

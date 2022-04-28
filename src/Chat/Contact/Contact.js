@@ -21,6 +21,7 @@ function RenderContact({
   });
 
   var lastMsgDisplay;
+  var displayText;
 
   if (lastMsg === "") {
     lastMsgDisplay = "";
@@ -28,6 +29,12 @@ function RenderContact({
     lastMsgDisplay = user.displayname + " : ";
   } else {
     lastMsgDisplay = displayname + " : ";
+  }
+  if (lastMsg.type === "text") {
+    displayText = lastMsg.text;
+  }
+  if (lastMsg.type === "img") {
+    displayText = "image";
   }
 
   return (
@@ -51,7 +58,7 @@ function RenderContact({
             <div className="row">
               <p className="mb-1 flex-grow-1 ms-3">
                 <b>{lastMsgDisplay}</b>
-                {lastMsg.text}
+                {displayText}
               </p>
             </div>
           </div>

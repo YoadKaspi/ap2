@@ -23,9 +23,14 @@ function MainChat() {
   const [contactName, setContactName] = useState("");
   const [messageList, setMessageList] = useState(msgList);
   const [contactList, setContactList] = useState(getContacts(contactNames));
+  const [file, setFile] = useState(null);
+  function handleChange(e) {
+    e.preventDefault();
+    setFile(URL.createObjectURL(e.target.files[0]));
+    console.log(file);
+  }
 
-  // const currContacts = contactNames.map((name) => findUser({ name, userList }));
-
+  // document.getElementById("currChat").scrollTop = document.getElementById("currChat").scrollHeight;
   return (
     <div className="d-flex justify-content-start">
       <div>
@@ -88,7 +93,7 @@ function MainChat() {
         <div id="warning" className="add-contact-val"></div>
       </div>
       <div className="chat-frame">
-        <div className="list-group">
+        <div id="currChat" className="list-group msgBox">
           {" "}
           <RenderChat
             messages={messageList}
@@ -190,6 +195,7 @@ function MainChat() {
                     reciever: contactName,
                     text: txt,
                     date: dateTxt,
+                    type: "text",
                   },
                 ]);
                 document.getElementById("msgArea").value = "";
@@ -207,6 +213,30 @@ function MainChat() {
               </svg>
             </button>
           </div>
+          <input type="file" onChange={handleChange}></input>
+          <button
+            onClick={() => {
+              var date = new Date();
+              var dateTxt =
+                String(date.getDate()) +
+                "/" +
+                String(date.getMonth() + 1) +
+                "/" +
+                String(date.getFullYear());
+              setMessageList((messageList) => [
+                ...messageList,
+                {
+                  sender: userName,
+                  reciever: contactName,
+                  text: file,
+                  date: dateTxt,
+                  type: "img",
+                },
+              ]);
+            }}
+          >
+            send
+          </button>
         </div>
       </div>
     </div>
