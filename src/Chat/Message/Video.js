@@ -2,7 +2,7 @@ import "./Message.css";
 import findUser from "../findUser/findUser";
 import userList from "../../Users";
 
-function Image({ sender, reciever, text }) {
+function Video({ sender, reciever, text }) {
   const user = findUser({ userName: sender, userList });
 
   return (
@@ -19,7 +19,9 @@ function Image({ sender, reciever, text }) {
             <h3 className="col-8 displayName">{user.displayname}</h3>
           </div>
           <div className="row">
-            <img src={text} className="big_image"></img>
+            <video controls className="big_image">
+              <source src={text} type="video/mp4"></source>
+            </video>
           </div>
         </div>
       </div>
@@ -27,4 +29,4 @@ function Image({ sender, reciever, text }) {
   );
 }
 
-export default Image;
+export default Video;

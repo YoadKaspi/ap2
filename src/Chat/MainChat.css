@@ -1,76 +1,81 @@
 .chat-frame {
-    background-color: #332e2e;
-    height: 90vh;
-    width: 850px;
+  background-color: #332e2e;
+  height: 90vh;
+  width: 850px;
 }
 
 .contact-headline {
-    background-color: white;
-    width: 500px;
-    font-size: 30px;
+  background-color: white;
+  width: 500px;
+  font-size: 30px;
 }
 
 .chat-screen {
-    width: 75% !important;
+  width: 75% !important;
 }
 
 .textbox-block {
-    background-color: #706b6b;
-    position: absolute;
-    height: 10vh;
-    width: 850px;
-    border-radius: 5px;
-    bottom: 0px;
+  background-color: #706b6b;
+  position: absolute;
+  height: 10vh;
+  width: 850px;
+  border-radius: 5px;
+  bottom: 0px;
 }
 
 .send-button {
-    background-color: #706b6b;
-    border-color: #706b6b;
-    box-shadow: none;
-    animation: none;
+  background-color: #706b6b;
+  border-color: #706b6b;
+  box-shadow: none;
+  animation: none;
 }
 
 .add-contact {
-    background-color: white;
-    border-radius: 5px;
+  background-color: white;
+  border-radius: 5px;
 }
 
 .add-contact-val {
-    background-color: white;
-    border-radius: 5px;
-    color: red;
+  background-color: white;
+  border-radius: 5px;
+  color: red;
 }
 
 .add-contact-button {
-    background-color: white;
-    border-color: white;
+  background-color: white;
+  border-color: white;
 }
 
 .message {
-    border-color: black;
-    border-radius: 5px;
-    color: white;
-    width: 800px;
-    height: min-content;
-    padding: 5px;
-    font-size: 25px;
+  border-color: black;
+  border-radius: 5px;
+  color: white;
+  width: 800px;
+  height: min-content;
+  padding: 5px;
+  font-size: 25px;
 }
 
 .displayName {
-    font-size: 25px;
+  font-size: 25px;
 }
 
 .text {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .image {
-    height: 70px;
-    width: 70px;
-    border-radius: 50px;
+  height: 70px;
+  width: 70px;
+  border-radius: 50px;
 }
 
 .msgBox {
-    height: 90vh;
-    overflow-y: auto;
+  height: 90vh;
+  overflow-y: auto;
+}
+
+.contactMenu {
+  height: 100vh;
+  overflow: auto;
 }

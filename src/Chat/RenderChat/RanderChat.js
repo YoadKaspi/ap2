@@ -1,5 +1,7 @@
 import Message from "../Message/Message";
 import Image from "../Message/Image";
+import Video from "../Message/Video";
+import Audio from "../Message/Audio";
 import FilterMessages from "../Filter/FilterMsg";
 
 function RenderChat({ messages, userName, contactName }) {
@@ -10,6 +12,12 @@ function RenderChat({ messages, userName, contactName }) {
     }
     if (message.type === "img") {
       return <Image {...message} key={key} />;
+    }
+    if (message.type === "video") {
+      return <Video {...message} key={key} />;
+    }
+    if (message.type === "audio") {
+      return <Audio {...message} key={key} />;
     }
   });
   return renderedMessages;

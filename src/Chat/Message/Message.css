@@ -1,29 +1,29 @@
 .message {
-    border-color: black;
-    border-radius: 5px;
-    color: white;
-    width: 800px;
-    word-break: break-all;
-    padding: 5px;
-    font-size: 25px;
+  border-color: black;
+  border-radius: 5px;
+  color: white;
+  width: 800px;
+  word-break: break-all;
+  padding: 5px;
+  font-size: 25px;
 }
 
 .displayName {
-    font-size: 25px;
+  font-size: 25px;
 }
 
 .text {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .image {
-    height: 70px;
-    width: 70px;
-    border-radius: 50px;
+  height: 70px;
+  width: 70px;
+  border-radius: 50px;
 }
 
 .big_image {
-    object-fit: cover;
-    width: 300px;
-    height: 300px;
+  object-fit: cover;
+  width: 70%;
+  height: 300px;
 }

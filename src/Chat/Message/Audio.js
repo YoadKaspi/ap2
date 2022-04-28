@@ -2,7 +2,7 @@ import "./Message.css";
 import findUser from "../findUser/findUser";
 import userList from "../../Users";
 
-function Image({ sender, reciever, text }) {
+function Audio({ sender, reciever, text }) {
   const user = findUser({ userName: sender, userList });
 
   return (
@@ -19,7 +19,9 @@ function Image({ sender, reciever, text }) {
             <h3 className="col-8 displayName">{user.displayname}</h3>
           </div>
           <div className="row">
-            <img src={text} className="big_image"></img>
+            <audio controls>
+              <source src={text} type="audio/mpeg"></source>
+            </audio>
           </div>
         </div>
       </div>
@@ -27,4 +29,4 @@ function Image({ sender, reciever, text }) {
   );
 }
 
-export default Image;
+export default Audio;
