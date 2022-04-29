@@ -69,6 +69,13 @@ let msgList = [
     date: "28/4/2022",
     type: "img",
   },
+  {
+    sender: "elad",
+    reciever: "yoad",
+    text: "/videos/example.mp4",
+    date: "28/4/2022",
+    type: "video",
+  },
 ];
 
 export default msgList;
