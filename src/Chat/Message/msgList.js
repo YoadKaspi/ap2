@@ -21,6 +21,13 @@ let msgList = [
         type: "text",
     },
     {
+        sender: "elad",
+        reciever: "dani",
+        text: "How is it?",
+        date: "21/4/2022",
+        type: "text",
+    },
+    {
         sender: "dani",
         reciever: "elad",
         text: "It's really nice!",
@@ -34,7 +41,7 @@ let msgList = [
         date: "01/01/2021",
         type: "text",
     },
-    { sender: "elad", reciever: "java", text: "How are you?", date: "21/4/2022" },
+    { sender: "elad", reciever: "java", text: "How are you?", date: "21/4/2022", type: "text" },
     {
         sender: "java",
         reciever: "elad",

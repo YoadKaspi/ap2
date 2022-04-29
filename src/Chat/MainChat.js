@@ -111,7 +111,7 @@ function MainChat() {
                                             width="24"
                                             height="24"
                                             fill="currentColor"
-                                            class="bi bi-camera-reels"
+                                            className="bi bi-camera-reels"
                                             viewBox="0 0 16 16"
                                         >
                                             <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM1 3a2 2 0 1 0 4 0 2 2 0 0 0-4 0z" />
@@ -219,7 +219,7 @@ function MainChat() {
                         <div className="modal-footer">
                             <button
                                 type="button"
-                                class="btn btn-primary"
+                                className="btn btn-primary"
                                 onClick={() => {
                                     var date = new Date();
                                     var dateTxt =
@@ -272,17 +272,17 @@ function MainChat() {
                         </div>
                         <div className="modal-body mb-3">
                             <input
-                                class="form-control"
+                                className="form-control"
                                 type="file"
                                 id="formFile"
                                 onChange={handleChange}
                                 accept="video/*"
                             />
                         </div>
-                        <div class="modal-footer">
+                        <div className="modal-footer">
                             <button
                                 type="button"
-                                class="btn btn-primary"
+                                className="btn btn-primary"
                                 onClick={() => {
                                     var date = new Date();
                                     var dateTxt =
@@ -342,11 +342,11 @@ function MainChat() {
                                 aria-describedby="inputGroup-sizing-default"
                             />
                         </div>
-                        <div class="modal-footer">
+                        <div className="modal-footer">
                             <div id="warning" className="add-contact-val text-start"></div>
                             <button
                                 type="button"
-                                class="btn btn-primary"
+                                className="btn btn-primary"
                                 onClick={() => {
                                     const txt = document.getElementById("addContactArea").value;
                                     if (
