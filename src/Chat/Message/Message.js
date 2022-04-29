@@ -5,6 +5,9 @@ import userList from "../../Users";
 function Message({ sender, reciever, text }) {
     const user = findUser({ userName: sender, userList });
 
+    if (reciever === "" || text === "") {
+        return;
+    }
     return (
         <div className="message">
             <div className="d-flex">

@@ -17,7 +17,7 @@ let userList = [
         username: "simha",
         displayname: "mutsim",
         password: "SimhaRif",
-        imgPath: "cool.jpg",
+        imgPath: "dog.jpg",
         contact: ["yoad"],
     },
     {
