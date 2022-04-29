@@ -48,12 +48,12 @@ function RenderContact({ contactname, displayname, imgPath, contactState, messag
                         <img src={require("./img/" + imgPath)} className="images" />
                     </div>
                     <div className="flex-grow-1 container">
-                        <div className="row justify-content-between">
-                            <h3 className="col-8">{displayname}</h3>
-                            <small className="col-4">{lastMsg.date}</small>
+                        <div className="row">
+                            <h3 className="col-7">{displayname}</h3>
+                            <small className="date">{lastMsg.date}</small>
                         </div>
                         <div className="row">
-                            <p className="mb-1 flex-grow-1 ms-3">
+                            <p className="mb-1 flex-grow-1 ms-3 last-msg">
                                 <b>{lastMsgDisplay}</b>
                                 {displayText}
                             </p>

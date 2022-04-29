@@ -1,5 +1,12 @@
 .contact-field {
     width: 500px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.date {
+    position: absolute;
+    left: 380px;
 }
 
 .images {
