@@ -10,10 +10,10 @@ function RenderCurrContact({ contactName }) {
         console.log(contact);
         return (
             <div className="d-flex flex-shrink-0 container">
-                <div className="col-sm-2">
+                <div className="col-sm-1.5">
                     <img src={require("../Contact/img/" + contact.imgPath)} className="contact-image" />
                 </div>
-                <div className="">
+                <div className="align-self-center">
                     <div className="display-name">{contact.displayname}</div>
                 </div>
             </div>

@@ -356,6 +356,7 @@ function MainChat() {
                                 className="form-control"
                                 aria-label="Sizing example input"
                                 aria-describedby="inputGroup-sizing-default"
+                                placeholder="Contact name"
                             />
                         </div>
                         <div className="modal-footer">
@@ -410,48 +411,52 @@ function MainChat() {
                                 aria-label="Close"
                             ></button>
                         </div>
+                        <div className="modal-body mb-3">
+                            <div id="warning" className="add-contact-val"></div>
+                            <div className="btn-group d-grid gap-2">
+                                <button
+                                    type="button"
+                                    className="btn btn-primary"
+                                    onClick={() => {
+                                        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                                            navigator.mediaDevices
+                                                .getUserMedia({ audio: true })
+                                                .then((stream) => {
+                                                    mediaRecorder = new MediaRecorder(stream);
+                                                    mediaRecorder.start();
+
+                                                    const data = [];
+
+                                                    mediaRecorder.ondataavailable = (event) => data.push(event.data);
+                                                    mediaRecorder.onstop = () => {
+                                                        const audioB = new Blob(data);
+                                                        audioUrl = URL.createObjectURL(audioB);
+                                                        mediaRecorder = null;
+                                                    };
+                                                })
+                                                .catch((err) => {
+                                                    console.log("failed to record!");
+                                                    console.log(err.name, err.message);
+                                                });
+                                        }
+                                    }}
+                                >
+                                    record
+                                </button>
+                                <button
+                                    type="button"
+                                    className="btn btn-primary"
+                                    onClick={() => {
+                                        if (mediaRecorder) {
+                                            mediaRecorder.stop();
+                                        }
+                                    }}
+                                >
+                                    stop recording
+                                </button>
+                            </div>
+                        </div>
                         <div className="modal-footer">
-                            <div id="warning" className="add-contact-val text-start"></div>
-                            <button
-                                type="button"
-                                className="btn btn-primary"
-                                onClick={() => {
-                                    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-                                        navigator.mediaDevices
-                                            .getUserMedia({ audio: true })
-                                            .then((stream) => {
-                                                mediaRecorder = new MediaRecorder(stream);
-                                                mediaRecorder.start();
-
-                                                const data = [];
-
-                                                mediaRecorder.ondataavailable = (event) => data.push(event.data);
-                                                mediaRecorder.onstop = () => {
-                                                    const audioB = new Blob(data);
-                                                    audioUrl = URL.createObjectURL(audioB);
-                                                    mediaRecorder = null;
-                                                };
-                                            })
-                                            .catch((err) => {
-                                                console.log("failed to record!");
-                                                console.log(err.name, err.message);
-                                            });
-                                    }
-                                }}
-                            >
-                                record
-                            </button>
-                            <button
-                                type="button"
-                                className="btn btn-primary"
-                                onClick={() => {
-                                    if (mediaRecorder) {
-                                        mediaRecorder.stop();
-                                    }
-                                }}
-                            >
-                                stop recording
-                            </button>
                             <button
                                 type="button"
                                 className="btn btn-primary"
